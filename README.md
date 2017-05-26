@@ -2,6 +2,7 @@
 This module for the [MagicMirror](https://github.com/MichMich/MagicMirror) shows the state of the sensors of the [alertR monitoring and alarm system](https://github.com/sqall01/alertR).
 
 ![MagicMirror](pics/magicmirror.jpg)
+
 (The module on the top right of the mirror)
 
 # Installation
