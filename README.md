@@ -27,7 +27,7 @@ git clone https://github.com/sqall01/MMM-alertRsensors.git # clone this module
         module: 'MMM-alertRsensors',
         position: 'top_right', // This can be any of the regions
         config: {
-        	// See 'Configuration options' for more information
+            // See 'Configuration options' for more information
         }
 },
 ```
@@ -36,96 +36,64 @@ git clone https://github.com/sqall01/MMM-alertRsensors.git # clone this module
 
 The following properties can be configured:
 
-<table width="100%">
-	<!-- why, markdown... -->
-	<thead>
-		<tr>
-			<th>Option</th>
-			<th width="100%">Description</th>
-		</tr>
-	<thead>
-	<tbody>
+| Option                        | Description
+| ----------------------------  | -----------
+| `host`                        | The host the MySQL server is running on. <br><br> **Example:** `'localhost'`
+| `user`                        | The user to connect to the MySQL server. <br><br> **Example:** `'root'`
+| `password`                    | The password to connect to the MySQL server.
+| `database`                    | The database used by the MySQL server. <br><br> **Example:** `'mm_alertr'`
+| `sensors`                     | A list of sensors that should be displayed by the mirror.
 
-		<tr>
-			<td><code>host</code></td>
-			<td>The host the MySQL server is running on.<br />
-				<br /><b>Example:</b> <code>'localhost'</code>
-			</td>
-		</tr>
+ 
 
-		<tr>
-			<td><code>user</code></td>
-			<td>The user to connect to the MySQL server.<br />
-				<br /><b>Example:</b> <code>'root'</code>
-			</td>
-		</tr>
 
-		<tr>
-			<td><code>password</code></td>
-			<td>The password to connect to the MySQL server.
-			</td>
-		</tr>
+        <tr>
+            <td><code>username</code></td>
+            <td>Username of the alertR client that provides this sensor.
+                This username is used by the alertR client to connect
+                to the alertR server.<br />
+                <br /><b>Example:</b> <code>'weather_sensor_user'</code>
+            </td>
+        </tr>
 
-		<tr>
-			<td><code>database</code></td>
-			<td>The database used by the MySQL server.<br />
-				<br /><b>Example:</b> <code>'mm_alertr'</code>
-			</td>
-		</tr>
+        <tr>
+            <td><code>remote_sensor_id</code></td>
+            <td>The id that is given by the alertR client to this sensor.
+                This id is used to identify the exact sensor that
+                should be displayed. Note, this is the id given by the
+                client and not the unique id given by the server.<br />
+                <br /><b>Example:</b> <code>0</code>
+            </td>
+        </tr>
 
-		<tr>
-			<td><code>sensors</code></td>
-			<td>A list of sensors that should be displayed by the mirror.
-			</td>
-		</tr>
+        <tr>
+            <td><code>show_data</code></td>
+            <td>If the sensor holds data like a temperature, this sets
+                if the data is shown or just the state of the sensor.<br />
+                <br /><b>Example:</b> <code>true</code>
+            </td>
+        </tr>
 
-		<tr>
-			<td><code>username</code></td>
-			<td>Username of the alertR client that provides this sensor.
-				This username is used by the alertR client to connect
-				to the alertR server.<br />
-				<br /><b>Example:</b> <code>'weather_sensor_user'</code>
-			</td>
-		</tr>
+        <tr>
+            <td><code>unit</code></td>
+            <td>If the sensor holds data, this gives the unit of the
+                sensor that should be displayed.<br />
+                <br /><b>Example:</b> <code>"°C"</code>
+            </td>
+        </tr>
 
-		<tr>
-			<td><code>remote_sensor_id</code></td>
-			<td>The id that is given by the alertR client to this sensor.
-				This id is used to identify the exact sensor that
-				should be displayed. Note, this is the id given by the
-				client and not the unique id given by the server.<br />
-				<br /><b>Example:</b> <code>0</code>
-			</td>
-		</tr>
-
-		<tr>
-			<td><code>show_data</code></td>
-			<td>If the sensor holds data like a temperature, this sets
-				if the data is shown or just the state of the sensor.<br />
-				<br /><b>Example:</b> <code>true</code>
-			</td>
-		</tr>
-
-		<tr>
-			<td><code>unit</code></td>
-			<td>If the sensor holds data, this gives the unit of the
-				sensor that should be displayed.<br />
-				<br /><b>Example:</b> <code>"°C"</code>
-			</td>
-		</tr>
-
-		<tr>
-			<td><code>relabel</code></td>
-			<td>This module displays the description of the alertR sensor.
-				But if this description is too cryptic to be shown
-				on a mirror in your living space, you can relabel it
-				with this option. If you do not want to relabel it,
-				just set an empty string.<br />
-				<br /><b>Example:</b> <code>"Temperature"</code>
-				<br /><b>Example:</b> <code>""</code>
-			</td>
-		</tr>
-	</tbody>
+        <tr>
+            <td><code>relabel</code></td>
+            <td>This module displays the description of the alertR sensor.
+                But if this description is too cryptic to be shown
+                on a mirror in your living space, you can relabel it
+                with this option. If you do not want to relabel it,
+                just set an empty string.<br />
+                <br /><b>Example:</b> <code>"Temperature"</code>
+                <br /><b>Example:</b> <code>""</code>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 An example configuration could look like this:
