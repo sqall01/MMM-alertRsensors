@@ -43,58 +43,11 @@ The following properties can be configured:
 | `password`                    | The password to connect to the MySQL server.
 | `database`                    | The database used by the MySQL server. <br><br> **Example:** `'mm_alertr'`
 | `sensors`                     | A list of sensors that should be displayed by the mirror.
-
- 
-
-
-        <tr>
-            <td><code>username</code></td>
-            <td>Username of the alertR client that provides this sensor.
-                This username is used by the alertR client to connect
-                to the alertR server.<br />
-                <br /><b>Example:</b> <code>'weather_sensor_user'</code>
-            </td>
-        </tr>
-
-        <tr>
-            <td><code>remote_sensor_id</code></td>
-            <td>The id that is given by the alertR client to this sensor.
-                This id is used to identify the exact sensor that
-                should be displayed. Note, this is the id given by the
-                client and not the unique id given by the server.<br />
-                <br /><b>Example:</b> <code>0</code>
-            </td>
-        </tr>
-
-        <tr>
-            <td><code>show_data</code></td>
-            <td>If the sensor holds data like a temperature, this sets
-                if the data is shown or just the state of the sensor.<br />
-                <br /><b>Example:</b> <code>true</code>
-            </td>
-        </tr>
-
-        <tr>
-            <td><code>unit</code></td>
-            <td>If the sensor holds data, this gives the unit of the
-                sensor that should be displayed.<br />
-                <br /><b>Example:</b> <code>"°C"</code>
-            </td>
-        </tr>
-
-        <tr>
-            <td><code>relabel</code></td>
-            <td>This module displays the description of the alertR sensor.
-                But if this description is too cryptic to be shown
-                on a mirror in your living space, you can relabel it
-                with this option. If you do not want to relabel it,
-                just set an empty string.<br />
-                <br /><b>Example:</b> <code>"Temperature"</code>
-                <br /><b>Example:</b> <code>""</code>
-            </td>
-        </tr>
-    </tbody>
-</table>
+| `username`                    | Username of the alertR client that provides this sensor. This username is used by the alertR client to connect to the alertR server. <br><br> **Example:** `'weather_sensor_user'`
+| `remote_sensor_id`            | The id that is given by the alertR client to this sensor. This id is used to identify the exact sensor that should be displayed. Note, this is the id given by the client and not the unique id given by the server. <br><br> **Example:** `0`
+| `show_data`                   | If the sensor holds data like a temperature, this sets if the data is shown or just the state of the sensor. <br><br> **Example:** `true`
+| `unit`                        | If the sensor holds data, this gives the unit of the sensor that should be displayed. <br><br> **Example:** `"°C"`
+| `relabel`                     | This module displays the description of the alertR sensor. But if this description is too cryptic to be shown on a mirror in your living space, you can relabel it with this option. If you do not want to relabel it, just set an empty string. <br><br> **Example:** `"Temperature"` <br> **Example:** `""`
 
 An example configuration could look like this:
 
