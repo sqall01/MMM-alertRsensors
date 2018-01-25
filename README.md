@@ -81,3 +81,12 @@ An example configuration could look like this:
         }
 },
 ```
+
+
+# Support
+
+If you like this project you can help to support it by contributing to it. You can contribute by writing tutorials, creating and documenting exciting new ideas to use it, writing code for it, and so on.
+
+If you do not know how to do any of it or do not have the time, you can support me on [Patreon](https://www.patreon.com/sqall).
+
+[![Patreon](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/sqall)
