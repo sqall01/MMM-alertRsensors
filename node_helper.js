@@ -36,6 +36,8 @@ module.exports = NodeHelper.create({
 				function(err, rows, fields) {
 
 				if(err) {
+					console.log("Error: " + err);
+					connection.end();
 					return;
 				}
 
@@ -70,6 +72,7 @@ module.exports = NodeHelper.create({
 
 				if(err) {
 					console.log("Error: " + err);
+					connection.end();
 					return;
 				}
 
@@ -82,6 +85,7 @@ module.exports = NodeHelper.create({
 
 					if(err) {
 						console.log("Error: " + err);
+						connection.end();
 						return;
 					}
 
@@ -108,6 +112,7 @@ module.exports = NodeHelper.create({
 
 							if(err) {
 								console.log("Error: " + err);
+								connection.end();
 								return;
 							}
 
