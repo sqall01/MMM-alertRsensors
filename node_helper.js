@@ -59,7 +59,7 @@ module.exports = NodeHelper.create({
 			});
 
 			var sensor_obj = {username: payload.username,
-				remote_sensor_id: payload.remote_sensor_id,
+				client_sensor_id: payload.client_sensor_id,
 				show_data: payload.show_data
 				};
 
@@ -79,8 +79,8 @@ module.exports = NodeHelper.create({
 				node_id = rows[0].id;
 
 				// Get sensor.
-				connection.query('SELECT id, description, state, dataType FROM sensors WHERE nodeId = ? and remoteSensorId = ?',
-					[node_id, sensor_obj.remote_sensor_id],
+				connection.query('SELECT id, description, state, dataType FROM sensors WHERE nodeId = ? and clientSensorId = ?',
+					[node_id, sensor_obj.client_sensor_id],
 					function(err, rows, fields) {
 
 					if(err) {

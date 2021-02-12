@@ -46,7 +46,7 @@ The following properties can be configured:
 | `database`                    | The database used by the MySQL server. <br><br> **Example:** `'mm_alertr'`
 | `sensors`                     | A list of sensors that should be displayed by the mirror.
 | `username`                    | Username of the alertR client that provides this sensor. This username is used by the alertR client to connect to the alertR server. <br><br> **Example:** `'weather_sensor_user'`
-| `remote_sensor_id`            | The id that is given by the alertR client to this sensor. This id is used to identify the exact sensor that should be displayed. Note, this is the id given by the client and not the unique id given by the server. <br><br> **Example:** `0`
+| `client_sensor_id`            | The id that is given by the alertR client to this sensor. This id is used to identify the exact sensor that should be displayed. Note, this is the id given by the client and not the unique id given by the server. <br><br> **Example:** `0`
 | `show_data`                   | If the sensor holds data like a temperature, this sets if the data is shown or just the state of the sensor. <br><br> **Example:** `true`
 | `unit`                        | If the sensor holds data, this gives the unit of the sensor that should be displayed. <br><br> **Example:** `"°C"`
 | `relabel`                     | This module displays the description of the alertR sensor. But if this description is too cryptic to be shown on a mirror in your living space, you can relabel it with this option. If you do not want to relabel it, just set an empty string. <br><br> **Example:** `"Temperature"` <br> **Example:** `""`
@@ -66,14 +66,14 @@ An example configuration could look like this:
                 sensors: [
                         // Temperature
                         {username: "weather_sensor_user",
-                        remote_sensor_id: 0,
+                        client_sensor_id: 0,
                         show_data: true,
                         unit: "°C",
                         relabel: "Temperature"},
 
                         // Front Door
                         {username: "livingroom_sensor_user",
-                        remote_sensor_id: 0,
+                        client_sensor_id: 0,
                         show_data: false,
                         unit: "",
                         relabel: "Front Door"},

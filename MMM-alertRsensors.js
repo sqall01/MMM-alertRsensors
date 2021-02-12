@@ -97,7 +97,7 @@ Module.register("MMM-alertRsensors",{
 			}
 
 			this.sensors.push({username: this.config.sensors[i].username,
-				remote_sensor_id: this.config.sensors[i].remote_sensor_id,
+				client_sensor_id: this.config.sensors[i].client_sensor_id,
 				show_data: this.config.sensors[i].show_data,
 				description: "",
 				state: 0,
@@ -123,7 +123,7 @@ Module.register("MMM-alertRsensors",{
 			this.sendSocketNotification("GET_SENSORS",
 				{config: this.config,
 				username: this.sensors[i].username,
-				remote_sensor_id: this.sensors[i].remote_sensor_id,
+				client_sensor_id: this.sensors[i].client_sensor_id,
 				show_data: this.sensors[i].show_data,
 				});
 		}
@@ -137,7 +137,7 @@ Module.register("MMM-alertRsensors",{
 			for(var i = 0; i < this.sensors.length; i++) {
 
 				if(this.sensors[i].username === payload.username
-					&& this.sensors[i].remote_sensor_id === payload.remote_sensor_id) {
+					&& this.sensors[i].client_sensor_id === payload.client_sensor_id) {
 
 					this.sensors[i].sensor_id = payload.sensor_id;
 					this.sensors[i].show_data = payload.show_data;
