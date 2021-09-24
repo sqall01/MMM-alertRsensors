@@ -99,10 +99,10 @@ module.exports = NodeHelper.create({
 
 						var sql_stmt = "";
 						if(sensor_obj.dataType === 1) {
-							sql_stmt = 'SELECT data FROM sensorsDataInt WHERE sensorId = ?';
+							sql_stmt = 'SELECT value, unit FROM sensorsDataInt WHERE sensorId = ?';
 						}
 						else if(sensor_obj.dataType === 2) {
-							sql_stmt = 'SELECT data FROM sensorsDataFloat WHERE sensorId = ?';
+							sql_stmt = 'SELECT value, unit FROM sensorsDataFloat WHERE sensorId = ?';
 						}
 						
 						// Get sensor data.
@@ -116,7 +116,8 @@ module.exports = NodeHelper.create({
 								return;
 							}
 
-							sensor_obj.data = rows[0].data;
+							sensor_obj.data = rows[0].value;
+							sensor_obj.unit = rows[0].unit;
 
 							connection.end();
 
