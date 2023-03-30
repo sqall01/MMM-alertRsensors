@@ -75,6 +75,11 @@ Module.register("MMM-alertRsensors",{
 				}
 			}
 
+			// Overwrite data field if sensor is offline
+			if(this.sensors[i].connected === 0) {
+				dataWrapper.textContent = "Offline";
+			}
+
 			sensorWrapper.appendChild(descriptionWrapper);
 			sensorWrapper.appendChild(dataWrapper);
 			wrapper.appendChild(sensorWrapper);
@@ -102,6 +107,7 @@ Module.register("MMM-alertRsensors",{
 				description: "",
 				state: 0,
 				dataType: 0,
+				connected: 0,
 				unit: this.config.sensors[i].unit,
 				relabel: relabel});
 		}
@@ -145,6 +151,8 @@ Module.register("MMM-alertRsensors",{
 					this.sensors[i].state = payload.state;
 					this.sensors[i].dataType = payload.dataType;
 					this.sensors[i].data = payload.data;
+					this.sensors[i].connected = payload.connected;
+					this.sensors[i].unit = payload.unit;
 					break;
 				}
 
