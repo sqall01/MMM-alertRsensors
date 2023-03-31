@@ -80,7 +80,7 @@ module.exports = NodeHelper.create({
 				connected = rows[0].connected;
 
 				// Get sensor.
-				connection.query('SELECT id, description, state, dataType FROM sensors WHERE nodeId = ? and clientSensorId = ?',
+				connection.query('SELECT id, description, state, dataType, error_state FROM sensors WHERE nodeId = ? and clientSensorId = ?',
 					[node_id, sensor_obj.client_sensor_id],
 					function(err, rows, fields) {
 
@@ -95,6 +95,7 @@ module.exports = NodeHelper.create({
 					sensor_obj.state = rows[0].state;
 					sensor_obj.dataType = rows[0].dataType;
 					sensor_obj.connected = connected;
+					sensor_obj.error_state = rows[0].error_state;
 
 					// Get sensor data.
 					if(sensor_obj.show_data && sensor_obj.dataType !== 0) {
